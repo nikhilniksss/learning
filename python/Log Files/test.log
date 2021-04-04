@@ -1,0 +1,23 @@
+2021-04-04 17:48:28,709 This is for log file
+2021-04-04 17:48:29,248 This is my first warning
+2021-04-04 17:48:30,049 This is my first erro
+2021-04-04 17:48:33,173 error has occured
+2021-04-04 17:48:33,173 division by zero
+Traceback (most recent call last):
+  File "<ipython-input-8-28db6943b13c>", line 4, in divide
+    div = a/b
+ZeroDivisionError: division by zero
+2021-04-04 17:48:39,154 This is error
+2021-04-04 17:48:39,155 This is info
+2021-04-04 17:48:39,155 This is exception
+2021-04-04 17:48:39,155 This is warning
+2021-04-04 17:48:39,156 This is exception
+NoneType: None
+2021-04-04 17:48:41,062 This log is for task given:
+2021-04-04 17:48:41,062 2
+2021-04-04 17:48:41,062 3
+2021-04-04 17:48:41,063 4
+2021-04-04 17:48:43,255 main log
+2021-04-04 17:48:43,258 this is from user1 info
+2021-04-04 17:48:54,877 main log
+2021-04-04 17:48:54,887 this is from user1 info
