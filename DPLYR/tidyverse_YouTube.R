@@ -80,3 +80,46 @@ gapminder %>% summarise_if(is.numeric,list(~mean(.)))
 # group_by
 
 gapminder %>% group_by(year) %>% summarize(con = n_distinct(country),mean_pop = mean(pop))
+
+
+### loading billboeard dataset
+
+library(tidyr)
+
+view(billboard)
+
+# gather function
+
+bill<- billboard %>% gather(key = week,value = rank,starts_with('wk'))
+
+summary(bill$rank)
+
+# let's remove NA from data
+
+bill <- billboard %>% gather(key = week,value = rank,starts_with('wk'),na.rm = T)
+
+summary(bill$week)
+
+# let's convert weeks column into numbers
+
+bill <- bill %>% mutate(week = parse_number(week))
+
+summary(bill$week)
+
+# joins 
+
+install.packages('nycflights13')
+library(nycflights13)
+
+data(flights)
+data(planes)
+data(airlines)
+data(airports)
+data(weather)
+
+flights
+planes
+
+flights %>% filter(dest == 'SEA') %>% select(tailnum) %>% 
+  left_join(planes %>% select(tailnum,manufacturer),by = "tailnum") %>% 
+  count(manufacturer) %>% arrange(desc(n))
